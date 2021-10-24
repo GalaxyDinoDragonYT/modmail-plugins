@@ -10,7 +10,7 @@ class utility(commands.Cog):
 
     @tasks.loop(seconds=10)
     async def statuss(self):
-      await self.bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"WIP."))  
+      await self.bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=f"to your DMs"))  
       await asyncio.sleep(10)
       await self.bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"DMs for help!"))
       await asyncio.sleep(10)
