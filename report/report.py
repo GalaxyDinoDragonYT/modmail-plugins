@@ -12,9 +12,9 @@ class report(commands.Cog):
         await reports_channel.send(embed=embed)
      
     @commands.command()
-    async def appeal(self, ctx, punishment:str, reasonfor:str, *, appeal:str):
+    async def appeal(self, ctx, punishment:str, reasonfor:str, appeal:str):
         appeals_channel = self.bot.get_channel(822612512942850059)
-        embed = discord.Embed(title="New appeal", description=f'{ctx.author.mention} is appealing a {punishment} for {reasonfor} \n\n Appeal: {appeal}')
+        embed = discord.Embed(title="New appeal", description=f'{ctx.author.mention} is appealing a {punishment} for {reasonfor} \n\n Appeal: {appeal}'.format(punishment, reasonfor, appeal))
         await appeals_channel.send(embed=embed)
 
 def setup(bot):
