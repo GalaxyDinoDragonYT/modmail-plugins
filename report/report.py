@@ -6,7 +6,7 @@ class report(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    async def report(self, ctx, user: commands.Member, reason:str, *, proof:str):
+    async def report(self, ctx, user: discord.Member, reason:str, *, proof:str):
         reports_channel = bot.get_channel(822612395516100618)
         embed = discord.Embed(title="New report", description=f'{ctx.author.mention} is reporting {user.mention} for {reason} \n Proof: {proof}')
         await reports_channel.send(embed=embed)
