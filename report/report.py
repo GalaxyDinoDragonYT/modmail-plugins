@@ -10,12 +10,14 @@ class report(commands.Cog):
         reports_channel = self.bot.get_channel(822612395516100618)
         embed = discord.Embed(title="New report", description=f'{ctx.author.mention} is reporting {user.mention} for {reason} \n\n Proof: {proof}')
         await reports_channel.send(embed=embed)
+        await ctx.send("Report sent!")
      
     @commands.command()
     async def appeal(self, ctx, punishment:str, reasonfor:str, *, appeal:str):
         appeals_channel = self.bot.get_channel(822612512942850059)
         embed = discord.Embed(title="New appeal", description=f'{ctx.author.mention} is appealing a {punishment} for {reasonfor} \n\n Appeal: {appeal}')
         await appeals_channel.send(embed=embed)
+        await ctx.send("Appeal sent!")
 
 def setup(bot):
     bot.add_cog(report(bot))
