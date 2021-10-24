@@ -6,9 +6,9 @@ class report(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    async def report(self, ctx, user: discord.Member, reason:str, *, proof:str):
+    async def report(self, ctx, user: int, reason:str, *, proof:str):
         reports_channel = self.bot.get_channel(822612395516100618)
-        embed = discord.Embed(title="New report", description=f'{ctx.author.mention} is reporting {user.mention} for {reason} \n\n Proof: {proof}')
+        embed = discord.Embed(title="New report", description=f'{ctx.author.mention} is reporting <@{user}> for {reason} \n\n Proof: {proof}')
         await ctx.message.delete()
         await reports_channel.send("<@&806462934111879209> <@&806462990005174302>",embed=embed)
         await ctx.send("Report sent!")
