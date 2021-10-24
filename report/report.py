@@ -22,7 +22,7 @@ class report(commands.Cog):
     @commands.command()
     async def feedback(self, ctx, stars: int, topic:str, *, description:str):
         reports_channel = self.bot.get_channel(806529349964005406)
-        embed = discord.Embed(title="New feedback", description=f'User: {ctx.author.mention}\n\nStar Star rating: {stars}/5\n\nTopic:\n\n   {topic}\n\nExplanation:\n\n   {description}')
+        embed = discord.Embed(title="New feedback", description=f'User: {ctx.author.mention}\n\nStar Star rating: {stars}/5\n\nTopic:\n   {topic}\n\nExplanation:\n   {description}')
         await reports_channel.send(embed=embed)
         await ctx.send("Feedback sent!")
        
