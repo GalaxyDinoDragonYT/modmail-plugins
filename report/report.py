@@ -24,7 +24,7 @@ class report(commands.Cog):
         reports_channel = self.bot.get_channel(806529349964005406)
         embed = discord.Embed(title="New feedback", description=f'User: {ctx.author.mention}\n\nStar Star rating: {stars}/5\n\nTopic:\n\n   {topic}\n\nExplanation:\n\n   {description}')
         await reports_channel.send(embed=embed)
-        await ctx.send("Report sent!")
+        await ctx.send("Feedback sent!")
        
 def setup(bot):
     bot.add_cog(report(bot))
