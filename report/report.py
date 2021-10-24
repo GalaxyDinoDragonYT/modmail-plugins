@@ -19,5 +19,12 @@ class report(commands.Cog):
         await appeals_channel.send("<@&806462934111879209> <@&806462990005174302>",embed=embed)
         await ctx.send("Appeal sent!")
 
+    @commands.command()
+    async def feedback(self, ctx, topic:str, *, description:str):
+        reports_channel = self.bot.get_channel(822612395516100618)
+        embed = discord.Embed(title="New feedback", description=f'User: {ctx.author.mention}\n\nTopic: {topic}\n\nExplanation: {description}')
+        await reports_channel.send("<@&806462934111879209> <@&806462990005174302>",embed=embed)
+        await ctx.send("Report sent!")
+       
 def setup(bot):
     bot.add_cog(report(bot))
