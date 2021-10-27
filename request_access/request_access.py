@@ -25,8 +25,8 @@ class request_access(commands.Cog):
         if role == "snr" or "s&r":
             if snr_role in ctx.author.roles:
                 ctx.author.add_role(snr_give)
-                await ctx.send("WASR role given.")
-             else:
+               await ctx.send("WASR role given.")
+            else:
                 await ctx.send("Not in WASR.")
     
 def setup(bot):
