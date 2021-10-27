@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-class report(commands.Cog):
+class botupdate(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -12,4 +12,4 @@ class report(commands.Cog):
         await channel.send(embed=discord.Embed(title="New bot upbate", description=message)
        
 def setup(bot):
-    bot.add_cog(report(bot))
+    bot.add_cog(botupdate(bot))
