@@ -8,6 +8,7 @@ class report(commands.Cog):
     @commands.command()
     async def request(self, ctx, role):
         snr_guild = 815707057944133643
+        snr_role = 821389484339494932
         if role == "snr" or "s&r":
        
 def setup(bot):
