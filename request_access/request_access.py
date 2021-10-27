@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-class report(commands.Cog):
+class request_access(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -27,4 +27,4 @@ class report(commands.Cog):
                 ctx.author.add_role(snr_give)
     
 def setup(bot):
-    bot.add_cog(report(bot))
+    bot.add_cog(request_access(bot))
