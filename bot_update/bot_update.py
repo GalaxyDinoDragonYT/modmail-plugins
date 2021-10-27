@@ -8,7 +8,8 @@ class report(commands.Cog):
     @commands.command()
     @commands.is_owner()
     async def update(self, ctx, *, message):
-        channel = 
+        channel = self.bot.get_channel(name="bot_updates")
+        await channel.send(embed=discord.Embed(title="New bot upbate", description=message)
        
 def setup(bot):
     bot.add_cog(report(bot))
