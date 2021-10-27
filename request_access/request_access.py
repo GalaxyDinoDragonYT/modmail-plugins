@@ -9,7 +9,7 @@ class request_access(commands.Cog):
     async def request(self, ctx, role):
         all_give = 815668824656445470
         snr_guild = self.bot.get_guild(815707057944133643)
-        snr_role = 821389484339494932
+        snr_role = discord.utils.find(lambda r: r.id == 821389484339494932, snr_guild):
         snr_give = 815669285380292608
         guide_guild = self.bot.get_guild(807134064322412555) 
         guide_role = 830627185554751509 
@@ -23,8 +23,11 @@ class request_access(commands.Cog):
         mod_role = 806324625784176682
         mod_give = 815669359472148480
         if role == "snr" or "s&r":
-            if ctx.author has snr_guild.get_role(snr_role):
+            if snr_role in ctx.author.roles:
                 ctx.author.add_role(snr_give)
+                await ctx.send("WASR role given.")
+             else:
+                await ctx.send("Not in WASR.")
     
 def setup(bot):
     bot.add_cog(request_access(bot))
