@@ -1,5 +1,4 @@
 import discord
-import lambda
 from discord.ext import commands
 
 class request_access(commands.Cog):
@@ -10,7 +9,7 @@ class request_access(commands.Cog):
     async def request(self, ctx, role):
         all_give = 815668824656445470
         snr_guild = self.bot.get_guild(815707057944133643)
-        snr_role = discord.utils.find(lambda r: r.id == "821389484339494932", snr_guild):
+        snr_role = discord.utils.find(lambda r: r.id == "821389484339494932", snr_guild)
         snr_give = 815669285380292608
         guide_guild = self.bot.get_guild(807134064322412555) 
         guide_role = 830627185554751509 
