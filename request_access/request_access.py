@@ -1,5 +1,5 @@
 import discord
-from discord.ui import button
+from discord import *
 from discord.ext import commands
 
 class request_access(commands.Cog):
