@@ -1,4 +1,6 @@
 import discord
+from discord_slash.utils.manage_components import create_button, create_actionrow
+from discord_slash.model import ButtonStyle
 from discord.ext import commands
 
 class request_access(commands.Cog):
@@ -6,7 +8,7 @@ class request_access(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    async def request(self, ctx, role):
+    async def request(self, ctx):
         all_give = 815668824656445470
         snr_guild = self.bot.get_guild(815707057944133643)
         snr_role = discord.utils.get(snr_guild.roles, id = "821389484339494932")
@@ -22,18 +24,11 @@ class request_access(commands.Cog):
         events_give = 815670590127996968
         mod_role = 806324625784176682
         mod_give = 815669359472148480
-        if role == "snr" or "s&r":
-            if snr_role in ctx.author.roles:
-                ctx.author.add_role(snr_give)
-                await ctx.send("WASR role given.")
-            else:
-                await ctx.send("Not staff in WASR.")
-        elif role == 'wea' or 'affairs' or 'external affairs':
-            if wea_role in ctx.author.roles:
-                ctx.author.add_role(wea_give)
-                await ctx.send("WEA role given.")
-            else:
-                await ctx.send("Not staff in WEA.")
+
+        buttons = [create_button(style=ButtonStyle.green, label="WEA"),create_button(style=ButtonStyle.blue, label="WASR"), create_button(style=ButtonStyle.red, label="WAGS"),create_button(style=ButtonStyle.green, label="WA events"), create_button(style=ButtonStyle.blue, label="WA moderation")]
+        action_row = create_actionrow(*buttons)
+
+        await ctx.send(components=[action_row])
 
     
 def setup(bot):
