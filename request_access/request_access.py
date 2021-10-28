@@ -9,13 +9,13 @@ class request_access(commands.Cog):
     async def request(self, ctx, role):
         all_give = 815668824656445470
         snr_guild = self.bot.get_guild(815707057944133643)
-        snr_role = discord.utils.find(lambda r: r.id == "821389484339494932", self.bot.snr_guild.roles)
+        snr_role = discord.utils.get(snr_guild.roles, id = "821389484339494932")
         snr_give = 815669285380292608
         #guide_guild = self.bot.get_guild(807134064322412555) 
         guide_role = 830627185554751509 
         guide_give = 815668898715926559
         wea_guild = self.bot.get_guild(819992511157239919)
-        wea_role =  discord.utils.find(lambda r: r.id == "819995995986985010", self.bot.wea_guild.roles)
+        wea_role =  discord.utils.get(wea_guild.roles, id = "819995995986985010")
         wea_give = 815669020756934678
         wa_guild = self.bot.get_guild(806222338584477736)
         events_role = 817417302747119627
