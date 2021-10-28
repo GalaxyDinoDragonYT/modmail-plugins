@@ -15,7 +15,7 @@ class request_access(commands.Cog):
         guide_role = 830627185554751509 
         guide_give = 815668898715926559
         wea_guild = self.bot.get_guild(819992511157239919)
-        wea_role =  discord.utils.find(lambda r: r.id == "819995995986985010", wea_guild)
+        wea_role =  discord.utils.find(lambda r: r.id == "819995995986985010", wea_guild.roles)
         wea_give = 815669020756934678
         wa_guild = self.bot.get_guild(806222338584477736)
         events_role = 817417302747119627
