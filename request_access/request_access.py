@@ -1,6 +1,4 @@
 import discord
-from discord_slash.utils.manage_components import create_button, create_actionrow
-from discord_slash.model import ButtonStyle
 from discord.ext import commands
 
 class request_access(commands.Cog):
