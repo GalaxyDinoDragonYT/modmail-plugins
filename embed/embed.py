@@ -2,7 +2,7 @@ import discord
 from discord import *
 from discord.ext import commands
 
-class embed(commands.Cog):
+class newEmbed(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -12,4 +12,4 @@ class embed(commands.Cog):
 
     
 def setup(bot):
-    bot.add_cog(embed(bot))
+    bot.add_cog(newEmbed(bot))
