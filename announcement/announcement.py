@@ -18,13 +18,13 @@ class AnnoucementPlugin(commands.Cog):
     @commands.group(aliases=["a"], invoke_without_command=True)
     @commands.guild_only()
     @checks.has_permissions(PermissionLevel.REGULAR)
-    async def announcement(self, ctx: commands.Context):
+    async def announcement1(self, ctx: commands.Context):
         """
         Make Announcements Easily
         """
         await ctx.send_help(ctx.command)
 
-    @announcement.command()
+    @announcement1.command()
     @checks.has_permissions(PermissionLevel.ADMIN)
     async def start(
         self,
@@ -110,8 +110,8 @@ class AnnoucementPlugin(commands.Cog):
                     "\nWhat's the announcement?"
                 )
             )
-            announcement = await self.bot.wait_for("message", check=check)
-            if cancel_check(announcement) is True:
+            announcement1 = await self.bot.wait_for("message", check=check)
+            if cancel_check(announcement1) is True:
                 await ctx.send("Cancelled!")
                 return
             else:
@@ -132,7 +132,7 @@ class AnnoucementPlugin(commands.Cog):
                         return
                     else:
                         await channel.channel_mentions[0].send(
-                            f"{role_mention}\n{announcement.content}"
+                            f"{role_mention}\n{announcement1.content}"
                         )
         elif cancel_check(embed_res) is False and embed_res.content.lower() == "y":
             embed = discord.Embed()
@@ -289,7 +289,7 @@ class AnnoucementPlugin(commands.Cog):
             if grole.mentionable is True:
                 await grole.edit(mentionable=False)
 
-    @announcement.command(aliases=["native", "n", "q"])
+    @announcement1.command(aliases=["native", "n", "q"])
     @checks.has_permissions(PermissionLevel.ADMIN)
     async def quick(
         self,
